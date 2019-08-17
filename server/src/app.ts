@@ -1,10 +1,11 @@
+import cors from "cors";
 import debug from "debug";
 import express, { Application, Request, Response } from "express";
 import MariaDB from "mariadb";
 
 const log = debug("Express: app");
 
-const PORT = process.env.PORT || 8080;
+const PORT = 5000;
 const app: Application = express();
 
 const maria = MariaDB.createPool({
@@ -26,7 +27,7 @@ let conn: MariaDB.PoolConnection;
 
 app.get("/", (req: Request, res: Response) => {
   log("Home: Get");
-  res.send("hello");
+  return res.redirect("http://localhost:3000/");
 });
 
 app.get("/insert/:no/:title", async (req: Request, res: Response) => {
@@ -42,7 +43,7 @@ app.get("/insert/:no/:title", async (req: Request, res: Response) => {
   }
 });
 
-app.get("/lists", async (req: Request, res: Response) => {
+app.get("/lists", cors(), async (req: Request, res: Response) => {
   log("Get lists");
 
   try {
@@ -52,7 +53,7 @@ app.get("/lists", async (req: Request, res: Response) => {
     }
 
     const lists = await conn.query("select * from ttable");
-    return res.send(lists);
+    return res.json({ lists });
   } catch (e) {
     console.error(e);
   }
