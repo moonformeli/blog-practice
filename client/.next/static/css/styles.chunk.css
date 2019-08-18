@@ -1,5 +1,62 @@
-._2py_lfs-KGSbXjwxNynxgP span {
-  font-weight: bold; }
+._2py_lfs-KGSbXjwxNynxgP {
+  height: 100vh;
+  display: flex; }
+  ._2py_lfs-KGSbXjwxNynxgP span {
+    font-weight: bold; }
+
+._3t0fb-2tT_CpouPEUSldxP {
+  width: 100%; }
+
+._1p3vwouLp1xs3Byzt3IX_8 {
+  width: 350px;
+  height: 100%;
+  background: #56b68a;
+  padding: 0 10px; }
+
+._3Fw1I9jN117t7mFnpNu87d {
+  height: 1px;
+  background: #4f4f4f;
+  border: none;
+  opacity: 0.3; }
+
+._3k_Boq6Tjg1AOn_djQPuGp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+
+.qcHE60G1_RAUleOoy3p-h {
+  color: #f1fffd; }
+
+.a7ofR0BpRq-x4GR1pDSah {
+  width: 130px;
+  height: 130px;
+  display: block;
+  background-image: url("/static/img/puppy.jpeg");
+  background-size: cover;
+  background-position: 50% 50%;
+  border-radius: 50%; }
+
+._sNews_qryKrhVetjyIke {
+  color: #f1fffd;
+  word-break: break-word;
+  font-size: 12px;
+  letter-spacing: 0.5px; }
+
+._3m1Z1lrcXpH3S2vZt6J6mp a {
+  text-decoration: none; }
+
+._3m1Z1lrcXpH3S2vZt6J6mp i {
+  display: inline-block;
+  transform: scale(1.6);
+  margin: 0 10px; }
+
+._18Zq0TjpxSagHViSM_yxYP li {
+  list-style: none;
+  color: #f1fffd; }
+
+._18Zq0TjpxSagHViSM_yxYP i {
+  display: inline-block; }
 
 
 /*# sourceMappingURL=styles.chunk.css.map*/

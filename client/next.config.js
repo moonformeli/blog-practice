@@ -1,5 +1,6 @@
 const withTypescript = require("@zeit/next-typescript");
 const withSass = require("@zeit/next-sass");
+const withImages = require("next-images");
 
 module.exports = withTypescript(
   withSass({
@@ -8,5 +9,10 @@ module.exports = withTypescript(
     },
     cssModules: true,
     sassLoaderOptions: {}
+  }),
+  withImages({
+    webpack(config, options) {
+      return config;
+    }
   })
 );

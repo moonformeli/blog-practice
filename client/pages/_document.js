@@ -1,0 +1,34 @@
+import Document, { Html, Head, Main, NextScript } from "next/document";
+
+class MyDocument extends Document {
+  static async getInitialProps(ctx) {
+    const initialProps = await Document.getInitialProps(ctx);
+    return { ...initialProps };
+  }
+
+  render() {
+    return (
+      <Html>
+        <Head>
+          <link
+            href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+            rel="stylesheet"
+          />
+        </Head>
+        <body
+          style={{
+            margin: 0,
+            padding: 0,
+            fontFamily: `"Roboto", sans-serif !important;`
+          }}
+        >
+          <Main />
+          <NextScript />
+          <script src="https://kit.fontawesome.com/7e2c3a3590.js" />
+        </body>
+      </Html>
+    );
+  }
+}
+
+export default MyDocument;
