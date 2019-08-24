@@ -15,7 +15,7 @@ export default class Category extends BaseQuery {
 
     await this.checkConnection();
 
-    const table = this.getTable("board");
+    const table = this.getTable("category");
     const query = this.queryMaker("select * from", table);
     const lists = await this.requestQuery(query);
     return { lists };
