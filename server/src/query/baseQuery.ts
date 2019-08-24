@@ -5,7 +5,7 @@ export default class BaseQuery {
   connect: Connect;
 
   constructor() {
-    this.connect = Connect.getInstance() as any;
+    this.connect = Connect.getInstance();
   }
 
   @boundMethod

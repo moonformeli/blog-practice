@@ -6,8 +6,8 @@ export const getConfig = () => {
     host: "localhost",
     password: "12345",
     tables: {
-      board: true,
-      category: true
+      board: "board",
+      category: "category"
     },
     user: "root"
   };

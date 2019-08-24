@@ -32,7 +32,7 @@ export default class Connect implements IConfigProps {
   }
 
   @boundMethod
-  static async getInstance(): Promise<Connect> {
+  static getInstance(): Connect {
     log("getInstance of Connect");
     if (instance && instance instanceof Connect) {
       return instance;
@@ -40,8 +40,7 @@ export default class Connect implements IConfigProps {
 
     const config = getConfig();
     instance = new Connect(config.getAllSettings());
-    await instance.bootStrap();
-    await instance.connect();
+    instance.bootStrap();
     return instance;
   }
 
@@ -81,9 +80,3 @@ export default class Connect implements IConfigProps {
     return "";
   }
 }
-
-export const getConnection = async (props: IConfigProps): Promise<Connect> => {
-  instance = new Connect(props);
-  await instance.bootStrap();
-  return instance;
-};
