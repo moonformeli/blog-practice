@@ -20,16 +20,4 @@ export default class Category extends BaseQuery {
     const lists = await this.requestQuery(query);
     return { lists };
   }
-
-  @boundMethod
-  async getCategory() {
-    log("get category");
-
-    await this.checkConnection();
-
-    const table = this.getTable("category");
-    const query = this.queryMaker("select * from", table);
-    const category = await this.requestQuery(query);
-    return { category };
-  }
 }

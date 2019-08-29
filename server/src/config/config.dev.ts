@@ -1,6 +1,6 @@
 import { IConfigProps } from "./config";
 
-export const getConfig = () => {
+export const getConfig = (): IConfigProps => {
   return {
     database: "blog",
     host: "localhost",

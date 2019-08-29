@@ -8,7 +8,11 @@
     "only-arrow-functions": true,
     "arrow-return-shorthand": true,
     "trailing-comma": true,
-    "no-console": false
+    "no-console": false,
+    "member-access": false,
+    "no-string-literal": false,
+    "member-ordering": false,
+    "variable-name": false
   },
   "rulesDirectory": []
 }
