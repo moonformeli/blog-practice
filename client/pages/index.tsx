@@ -3,40 +3,30 @@ import { NextPage } from "next";
 import axios from "axios";
 import styles from "./index.scss";
 import Nav from "../components/Home/Nav";
+import { ICategoryPayload } from "../models/category/interfaces/ICategoryPayload";
+import CategoryController from "../controller/category/CategoryController";
 
 interface IList {
   [key: string]: string;
 }
 
 interface IApp {
-  data: {
-    lists: IList[];
-  };
+  category: ICategoryPayload;
 }
 
-const App: NextPage<IApp> = ({ data }) => {
+const App: NextPage<IApp> = ({ category }) => {
   return (
     <section className={styles.container}>
       <Nav />
-      <article className={styles.main}>
-        {data.lists.map((item, i) => {
-          console.dir(item);
-          const { no, title } = item;
-          return (
-            <div key={i}>
-              no - {no}, title - {title}
-            </div>
-          );
-        })}
-      </article>
+      <article className={styles.main}>1</article>
     </section>
   );
 };
 
-App.getInitialProps = async ({ req }): Promise<any> => {
-  const response = await axios.get("http://localhost:5000/lists");
-
-  return { data: response.data };
+App.getInitialProps = async ({ req }): Promise<IApp> => {
+  const categoryController = new CategoryController();
+  const res = (await categoryController.getCategoryList()) as ICategoryPayload;
+  return { category: res };
 };
 
 export default App;

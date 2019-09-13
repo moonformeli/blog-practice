@@ -19,7 +19,7 @@ class MyDocument extends Document {
           style={{
             margin: 0,
             padding: 0,
-            fontFamily: `"Roboto", sans-serif !important;`
+            fontFamily: `"Roboto", sans-serif !important`
           }}
         >
           <Main />
