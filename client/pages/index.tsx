@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { NextPage } from "next";
 import axios from "axios";
 import styles from "./index.scss";
-import Nav from "../components/Home/Nav";
+import Header from "../components/Home/Header";
 import { ICategoryPayload } from "../models/category/interfaces/ICategoryPayload";
 import CategoryController from "../controller/category/CategoryController";
 
@@ -17,7 +17,7 @@ interface IApp {
 const App: NextPage<IApp> = ({ category }) => {
   return (
     <section className={styles.container}>
-      <Nav />
+      <Header />
       <article className={styles.main}>1</article>
     </section>
   );

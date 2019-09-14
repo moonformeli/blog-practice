@@ -1,5 +1,6 @@
 import { boundMethod } from "autobind-decorator";
 import debug from "debug";
+import Express from "express";
 import BaseQuery from "./baseQuery";
 
 const log = debug("Express: Category");
@@ -10,7 +11,7 @@ export default class Category extends BaseQuery {
   }
 
   @boundMethod
-  async getLists() {
+  async getLists(req: Express.Request, res: Express.Response) {
     log("get lists");
 
     await this.checkConnection();
@@ -18,6 +19,6 @@ export default class Category extends BaseQuery {
     const table = this.getTable("category");
     const query = this.queryMaker("select * from", table);
     const lists = await this.requestQuery(query);
-    return { lists };
+    res.json({ lists });
   }
 }

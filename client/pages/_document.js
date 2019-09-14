@@ -11,9 +11,15 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+            rel="stylesheet"
+          />
+          <link
             href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
             rel="stylesheet"
           />
+          <link rel="stylesheet" href="https://use.typekit.net/ebq7wrd.css" />
+          <link rel="stylesheet" href="https://use.typekit.net/ebq7wrd.css" />
         </Head>
         <body
           style={{

@@ -1,5 +1,8 @@
 import { boundMethod } from "autobind-decorator";
+import debug from "debug";
 import Connect from "../connect/connect";
+
+const log = debug("Express:");
 
 export default class BaseQuery {
   connect: Connect;
@@ -25,6 +28,7 @@ export default class BaseQuery {
   @boundMethod
   async requestQuery(query: string) {
     // TODO: 예외처리 할 것
+    log("requestQuery");
     return await this.connect.conn.query(query);
   }
 
