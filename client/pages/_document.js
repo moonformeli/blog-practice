@@ -18,9 +18,14 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
             rel="stylesheet"
           />
+          <link
+            href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap"
+            rel="stylesheet"
+          ></link>
           <link rel="stylesheet" href="https://use.typekit.net/ebq7wrd.css" />
           <link rel="stylesheet" href="https://use.typekit.net/ebq7wrd.css" />
         </Head>
+        <style></style>
         <body
           style={{
             margin: 0,

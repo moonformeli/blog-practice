@@ -1,12 +1,21 @@
-import BaseContoller from "../BaseController";
+import CategoryModel from "../../models/category/CategoryModel";
+import {
+  ICategoryData,
+  ICategoryPayload
+} from "../../models/category/interfaces/ICategoryPayload";
 import { IRequestParams } from "../../models/common/IBaseController";
+import BaseContoller from "../BaseController";
 
 export default class CategoryController extends BaseContoller {
-  async getCategoryList() {
+  private model = new CategoryModel();
+
+  async getCategoryList(): Promise<ICategoryData> {
     const params = {
       method: "get",
       url: "/category/lists"
     } as IRequestParams;
-    return await this.send(params);
+    const payload = (await this.send(params)) as ICategoryPayload;
+    const category = this.model.getData(payload);
+    return category;
   }
 }

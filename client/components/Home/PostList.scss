@@ -1,0 +1,76 @@
+$maxWidth: 700px;
+$categoryTitleColor: #1f8ce6;
+$titleColor: #373a3c;
+$contentColor: #6c8094;
+
+.container {
+  max-width: $maxWidth;
+  padding: 0 40px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+}
+
+.anchor {
+  text-decoration: none;
+  &:visited,
+  &:link,
+  &:active {
+    text-decoration: none;
+    .title {
+      color: $titleColor;
+    }
+    .content {
+      color: $contentColor;
+    }
+    .categoryTitle {
+      color: $categoryTitleColor;
+    }
+  }
+}
+
+.listItem {
+  padding: 25px 5px 20px;
+  border-bottom: 1px solid #eee;
+  &:hover {
+    cursor: pointer;
+    user-select: none;
+    transform: translateY(-1px);
+    border-bottom: 1px solid #d1d5d9;
+  }
+}
+
+.categoryTitle {
+  font-size: 10px;
+  font-family: bungee, sans-serif;
+  color: $categoryTitleColor;
+  letter-spacing: 0.4px;
+}
+
+.title {
+  font-size: 26px;
+  font-family: "Nanum Gothic", sans-serif;
+  font-weight: bold;
+  letter-spacing: -0.78px;
+  margin: 10px 0 5px;
+  color: $titleColor;
+}
+
+.content {
+  font-size: 16px;
+  font-family: "Nanum Gothic", sans-serif;
+  color: $contentColor;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.4;
+  display: block;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}

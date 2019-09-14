@@ -18,7 +18,7 @@ export default class Board extends BaseQuery {
 
     const table = this.getTable("board");
     const query = this.queryMaker("select * from", table);
-    const boards = await this.requestQuery(query);
-    res.json({ boards });
+    const board = await this.requestQuery(query);
+    res.json({ board });
   }
 }
