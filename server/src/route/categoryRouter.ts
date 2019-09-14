@@ -1,6 +1,5 @@
 import { Router } from "express";
 import CategoryQuery from "../query/category";
-import { isValidXhr } from "./router";
 
 export default class CategoryRoute {
   static bootStrap() {
