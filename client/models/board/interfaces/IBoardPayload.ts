@@ -4,7 +4,7 @@ interface IBoardItem {
   category_no: number;
   category_title: string;
   content: string;
-  date: Date;
+  regDate: Date;
   liked: number;
   no: number;
   title: string;
