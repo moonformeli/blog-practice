@@ -19,10 +19,10 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
           <link
-            href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap"
+            href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Ubuntu&display=swap"
             rel="stylesheet"
           ></link>
-          <link rel="stylesheet" href="https://use.typekit.net/ebq7wrd.css" />
+          {/* orbitron, bungee */}
           <link rel="stylesheet" href="https://use.typekit.net/ebq7wrd.css" />
         </Head>
         <style></style>
