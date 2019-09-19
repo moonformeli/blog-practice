@@ -1,17 +1,17 @@
-import React from "react";
-import Moment from "moment";
-import { IBoardData } from "../../models/board/interfaces/IBoardPayload";
-import styles from "./PostList.scss";
+import Moment from 'moment';
+import React from 'react';
+import { IBoardData } from '../../models/board/interfaces/IBoardPayload';
+import styles from './PostList.scss';
 
 interface IPostList extends IBoardData {}
 
 const PostList: React.FC<IPostList> = ({ board }) => {
-  console.log("board");
+  console.log('board');
   console.dir(board);
 
-  const items = board.map((item, i) => {
+  const items = board.map(item => {
     const { no, category_title, title, content, regDate } = item;
-    const formatDate = Moment(regDate).format("YYYY. MM. DD");
+    const formatDate = Moment(regDate).format('YYYY. MM. DD');
     return (
       <li className={styles.listItem} key={`${category_title}-${no}`}>
         <a>

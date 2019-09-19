@@ -1,7 +1,7 @@
-import express from "express";
-import next from "next";
-import path from "path";
-import nextRoutes from "next-routes";
+import express from 'express';
+import next from 'next';
+import nextRoutes from 'next-routes';
+import path from 'path';
 
 interface IRoutes {
   route: string;
@@ -12,11 +12,12 @@ interface INextRoutes {
   routes: IRoutes[];
 }
 
-const port = parseInt(process.env.PORT, 10) || 9999;
-const isDev = process.env.NODE_ENV === "development";
+const app = express();
+const port = parseInt(process.env.PORT, 10) || 5000;
+const isDev = process.env.NODE_ENV === 'development';
 const nextServer = next({
   dev: isDev,
-  dir: path.join(path.resolve(__dirname), "..")
+  dir: path.join(path.resolve(__dirname), '..'),
 });
 
 const nextRoute = new nextRoutes();
@@ -26,27 +27,36 @@ const nextRouteList: INextRoutes[] = [
     // 홈
     routes: [
       {
-        route: "/",
-        path: "/index"
-      }
-    ]
+        route: '/',
+        path: '/index',
+      },
+    ],
   },
   {
     // About
     routes: [
       {
-        route: "/about",
-        path: "/about/about"
-      }
-    ]
-  }
+        route: '/about',
+        path: '/about/about',
+      },
+    ],
+  },
+  {
+    // Admin
+    routes: [
+      {
+        route: '/admin',
+        path: '/admin/admin',
+      },
+    ],
+  },
 ];
 
-const app = express().listen(port, () => {
+app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
 
-async () => {
+(async () => {
   await nextServer.prepare();
 
   nextRouteList.forEach((routeGroup: INextRoutes) => {
@@ -57,25 +67,22 @@ async () => {
     });
   });
 
-  const handler = nextRoute.getRequestHandler(
-    nextServer,
-    async ({ req, res, route, query }: any) => {
-      try {
-        nextServer.renderToHTML(req, res, route.page, query).then(html => {
-          res.send(html);
-        });
-      } catch (err) {
-        console.error(err);
-        nextServer.renderError(err, req, res, route.page, query);
-      }
+  const handler = nextRoute.getRequestHandler(nextServer, async ({ req, res, route, query }: any) => {
+    try {
+      nextServer.renderToHTML(req, res, route.page, query).then(html => {
+        res.send(html);
+      });
+    } catch (err) {
+      console.error(err);
+      nextServer.renderError(err, req, res, route.page, query);
     }
-  );
+  });
 
-  app.get("*", (req, res) => {
+  app.get('*', (req, res) => {
     try {
       handler(req, res);
     } catch (err) {
-      console.error("app.get error", err);
+      console.error('app.get error', err);
     }
   });
-};
+})();

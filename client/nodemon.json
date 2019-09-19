@@ -1,18 +1,9 @@
 {
-  "restartable": "rs",
-  "ignore": [".git", "node_modules/**/node_modules"],
-  "verbose": true,
-  "exec": "ts-node -r ts-node/register src/server/server.ts",
-  "execMap": {
-    "js": "node --harmony"
-  },
-  "events": {
-    "restart": "osascript -e 'display notification \"App restarted due to:\n'$FILENAME'\" with title \"nodemon\"'"
-  },
-  "watch": ["/src/server/*.ts"],
+  "ext": "ts",
+  "watch": ["src/server/**/*.ts"],
   "env": {
     "NODE_ENV": "development",
-    "DEBUG": "*"
+    "NODE_OPTIONS": "--max_old_space_size=4096"
   },
-  "ext": "ts, tsx"
+  "exec": "ts-node -r tsconfig-paths/register src/server/server.ts"
 }

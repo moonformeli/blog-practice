@@ -1,27 +1,23 @@
-import { NextPage } from "next";
-import React from "react";
-import { pathOr } from "ramda";
-import Header from "../components/Home/Header";
-import PostList from "../components/Home/PostList";
-import BoardController from "../controller/board/BoardController";
-import CategoryController from "../controller/category/CategoryController";
-import { IBoardData } from "../models/board/interfaces/IBoardPayload";
-import { ICategoryData } from "../models/category/interfaces/ICategoryPayload";
-import styles from "./index.scss";
-
-interface IList {
-  [key: string]: string;
-}
+import Next from 'next';
+import { pathOr } from 'ramda';
+import React from 'react';
+import Header from '../components/Home/Header';
+import PostList from '../components/Home/PostList';
+import BoardController from '../controller/board/BoardController';
+import CategoryController from '../controller/category/CategoryController';
+import { IBoardData } from '../models/board/interfaces/IBoardPayload';
+import { ICategoryData } from '../models/category/interfaces/ICategoryPayload';
+import styles from './index.scss';
 
 interface IApp {
   categoryPayload: ICategoryData;
   boardPayload: IBoardData;
 }
 
-const App: NextPage<IApp> = ({ categoryPayload, boardPayload }) => {
-  const board = pathOr([], ["board"], boardPayload);
-  const category = pathOr([], ["category"], categoryPayload);
-  console.log("category");
+const App: Next.NextFC<IApp> = ({ categoryPayload, boardPayload }) => {
+  const board = pathOr([], ['board'], boardPayload);
+  const category = pathOr([], ['category'], categoryPayload);
+  console.log('category');
   console.dir(categoryPayload);
   console.dir(category);
   return (
@@ -32,7 +28,7 @@ const App: NextPage<IApp> = ({ categoryPayload, boardPayload }) => {
   );
 };
 
-App.getInitialProps = async ({ req }): Promise<IApp> => {
+App.getInitialProps = async (): Promise<IApp> => {
   const categoryController = new CategoryController();
   const boardController = new BoardController();
 

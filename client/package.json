@@ -1,36 +1,48 @@
 {
-  "name": "client",
+  "name": "client-next",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon"
+    "dev": "nodemon",
+    "build": "next build src/"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@zeit/next-sass": "^1.0.1",
-    "@zeit/next-source-maps": "0.0.3",
+    "@babel/polyfill": "^7.6.0",
     "axios": "^0.19.0",
     "express": "^4.17.1",
     "moment": "^2.24.0",
-    "next": "^9.0.3",
-    "next-images": "^1.1.2",
+    "next": "^7.0.2",
     "next-routes": "^1.4.2",
-    "node-sass": "^4.12.0",
     "ramda": "^0.26.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "typestyle": "^2.0.4"
   },
   "devDependencies": {
-    "@types/next": "^8.0.6",
-    "@types/ramda": "^0.26.19",
+    "@babel/plugin-proposal-decorators": "^7.6.0",
+    "@types/express": "^4.17.1",
+    "@types/next": "^7.0.9",
+    "@types/ramda": "^0.26.22",
     "@types/react": "^16.9.2",
+    "@types/react-dom": "^16.9.0",
+    "@zeit/next-sass": "^1.0.1",
     "@zeit/next-typescript": "^1.1.1",
+    "node-sass": "^4.12.0",
     "nodemon": "^1.19.2",
+    "stylelint": "^11.0.0",
+    "ts-loader": "^6.1.0",
     "ts-node": "^8.4.1",
-    "typescript": "^3.5.3"
+    "tsconfig-paths": "^3.9.0",
+    "tslint": "^5.20.0",
+    "tslint-config-airbnb": "^5.11.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.0.1",
+    "tslint-react": "^4.1.0",
+    "tslint-react-hooks": "^2.2.1",
+    "typescript": "^3.6.3"
   }
 }
