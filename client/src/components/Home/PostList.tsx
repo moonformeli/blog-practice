@@ -14,7 +14,7 @@ const PostList: React.FC<IPostList> = ({ board }) => {
     const formatDate = Moment(regDate).format('YYYY. MM. DD');
     return (
       <li className={styles.listItem} key={`${category_title}-${no}`}>
-        <a>
+        <a className={styles.anchor} href={`/post/${no}`}>
           <p className={styles.categoryTitle}>{category_title}</p>
           <p className={styles.title}>{title}</p>
           <p className={styles.content}>{content}</p>

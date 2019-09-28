@@ -6,6 +6,7 @@ export default class BoardRouter {
     const router = Router();
     const Board = new BoardQuery();
     router.get("/board/lists", Board.getLists.bind(Board));
+    router.get("/board/post/:id", Board.getPost.bind(Board));
     return router;
   }
 }

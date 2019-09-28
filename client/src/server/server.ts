@@ -33,6 +33,15 @@ const nextRouteList: INextRoutes[] = [
     ],
   },
   {
+    // Post
+    routes: [
+      {
+        route: '/post/:id',
+        path: '/post/post',
+      },
+    ],
+  },
+  {
     // About
     routes: [
       {

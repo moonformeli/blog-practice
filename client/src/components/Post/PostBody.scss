@@ -1,0 +1,11 @@
+$maxWidth: 700px;
+
+.guideLine {
+  padding: 0 40px;
+  max-width: $maxWidth;
+}
+
+.container {
+  @extend .guideLine;
+  margin: 0 auto;
+}

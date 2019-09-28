@@ -3,7 +3,8 @@
   "watch": ["src/server/**/*.ts"],
   "env": {
     "NODE_ENV": "development",
-    "NODE_OPTIONS": "--max_old_space_size=4096"
+    "NODE_OPTIONS": "--max_old_space_size=4096",
+    "PORT": 3000
   },
   "exec": "ts-node -r tsconfig-paths/register src/server/server.ts"
 }
